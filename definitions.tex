@@ -1,0 +1,142 @@
+\usepackage[top=3.5cm,right=3cm,bottom=4cm,left=3cm]{geometry}  
+\usepackage{amsmath}
+ \usepackage[marginal,stable,bottom]{footmisc}     % for footnotes: marginal --> the same margins as text, 
+                                                                                  %                       stable--> ?
+                                                                                  %                       bottom --> starting the footnotes at a fixed place at the bottom of the page.
+ 
+\usepackage{perpage}                                             % for footnotes: starting from 1 perpage
+\MakePerPage{footnote}
+\usepackage{cite}                                                     % for collecting citations: [1,2,3,4] --> [1-4]
+\usepackage{setspace}                                            % for switching between double/single space in document
+\allowdisplaybreaks                                                    % breaking the lines&pages when needed for the style.
+\usepackage{parskip}                                               % ? 
+
+%\relpenalty=9999                                            % show the neccessity of breaks for lines, changing the number to 10000 cause no break in lines.
+%\binoppenalty=9999
+
+\usepackage{xecolor}
+\usepackage{amsmath}
+\usepackage{makeidx}
+\usepackage{verbatim}
+\usepackage[colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+ \parindent0pt
+
+
+\makeatletter
+\pdfstringdefDisableCommands{%
+\let\lr\@firstofone
+}
+\makeatother
+% ----------------------------------------------------------------------------
+\usepackage{xepersian}
+
+\usepackage[Lenny]{fncychap}
+
+\settextfont[Scale=1.07]{XB Niloofar}
+\setlatintextfont[Scale=1.05]{Times New Roman} 
+\setdigitfont[Scale=1.05]{Yas} 
+% قلم برای اعداد به صورت فارسی با صفر توخالی، در صورتی که بخواهیم اعداد انگلیسی نوشته شوند این خط را غیر فعال می‌کنیم.
+
+\defpersianfont\nastaliq[Scale=2.0]{IranNastaliq}
+% قلم برای نوشتن تقدیم
+\defpersianfont\nastaliqone[Scale=1.0]{IranNastaliq}
+% قلم نستعلیق با سایز متناسب با متن در صورت نیاز
+\defpersianfont\anotherfont[Scale=1.2]{B Zar}
+% قلم برای نوشتن تشکر (قلم فانتزی)
+\newenvironment{fantezi}
+{\anotherfont }
+
+
+\makeindex
+
+
+\def\beginto{
+\newpage
+\begin{RTL}
+\begin{Huge}
+\nastaliq
+
+\begin{center}
+\vspace*{0.15cm}
+تقدیم به 
+}
+
+\def\endto{
+~
+\end{center}
+\end{Huge}
+\end{RTL}
+}
+
+\def\beginthanks{
+\newpage
+
+{\centering\Huge{\nastaliqone{
+تشکر وقدردانی ~\\
+~\\}}}
+}
+
+\def\endthanks{
+~
+}
+
+\def\thanks{
+\beginthanks
+\input{thanks}
+\endthanks
+}
+
+\def\startpage{
+\newpage
+\vspace*{3cm}
+\begin{center}
+\includegraphics[width=12cm]{besm}
+\end{center}
+}
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \centering\normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \huge\bfseries \@chapapp\space \tartibi{chapter} 
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \centering
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+
+
+\renewcommand\bibname{مراجع}
+\def\contentsname{فهرست}
+
+% some extra diffinitions %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+
+\def\ba{\begin{array}}
+\def\ea{\end{array}}
+
+\def\ni{\noindent}
+\def\nn{\nonumber}
+
+\def\bc{\begin{center}}
+\def\ec{\end{center}}

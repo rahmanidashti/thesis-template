@@ -1,0 +1,123 @@
+% -------------------- DON'T EDIT ----------------------------------------
+\documentclass[a4paper,12pt,oneside,openany]{xepersian-thesis-znu-ftex}
+\input{definitions}
+
+% ------------------- You Can EDIT ----------------------------------------
+% The paths to the images.
+\graphicspath{{chap1_images/}{chap2_images/}}                       
+
+% -------------------- DON'T EDIT ----------------------------------------
+\begin{document}
+% -------------------- PLEASE EDIT ---------------------------------------
+
+% --------------------------------------   INFORMATION IN PERSIAN  ---------------------------------------
+
+\title{پایان‌نامه من با زی‌پرشین}
+\author{نام نام خانوادگی}
+%--------------------------------------------
+\degree{کارشناسی}
+%---------------------------------------------
+\supervisor{نام استاد راهنما}
+% در صورتی که استاد مشاور داشته‌اید نام وی را در خط زیر بنویسید در غیر این صورت خط زیر باید غیرفعال باشد.
+%\advisor{نام استاد مشاور} \advisorexisttrue
+\department{کامپیوتر}
+\university{دانشگاه زنجان}
+\city{زنجان}
+\thesisdate{\today}
+\makepersiantitle
+% -------------------------------------------------------------------------------------------------------------------
+\startpage
+% -------------------------------------------------------------------------------------------------------------------
+
+\beginto
+%%در اینجا پایان‌نامه خود را به هر کس که دوست دارید تقدیم کنید. در غیر این صورت این قسمت را غیر فعال کنید.
+...
+\endto
+% -------------------------------------------------------------------------------------------------------------------
+%اگر در فایل thanks از دوستان و همکاران خود تشکر کرده‌اید خط زیر را فعال کنید، در غیر این صورت این خط باید غیرفعال باشد.
+\thanks
+% -------------------------------------------------------------------------------------------------------------------
+\newpage
+\begin{abstract}
+% To add the abstract in the index.
+\addcontentsline{toc}{section}{چکیده} 
+\input{abstract_fa}
+\end{abstract}
+% -------------------------------------------------------------------------------------------------------------------
+% اضافه کردن فهرست محتوا - شکل - جدول
+\tableofcontents
+\listoffigures
+\listoftables
+% -------------------------------------------------------------------------------------------------------------------
+
+% اگر قبل از شروع فصل‌های پایان‌نامه مقدمه‌ای دارید، خط زیر را فعال کرده و مقدمه خود را در فایل introduction بنویسید. در غیر این صورت این خط باید غیر فعال باشد.
+\newpage
+\pagenumbering{arabic}\setcounter{page}{1}
+\include{introduction}
+
+% ----------------------------------------   Chapters of the Thesis  ---------------------------------------------
+% if any un-wanted empty page is produced between chapters, you can use \input instead of \include : \input{chapter_1}
+\include{chapter_1} 
+\include{chapter_2}
+\include{chapter_3}
+\include{chapter_4}
+
+%--------------------------------------------------------------------------------------------------------
+% -------------------- DON'T EDIT ----------------------------------------
+% the following lines are needed for making the appendixes name correct in the index.
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \centering\normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \huge\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@  }}
+%--------------------------------------------------------------------------------------------------------
+% -------------------- Please EDIT ----------------------------------------
+
+\appendix
+\include{appendix_1} 
+\include{appendix_2}
+
+\bibliographystyle{unsrt-fa}
+% اگر فایل bibtex با پسوند bib حاوی اطلاعات مربوط به مراجع خود با فرمت صحیح bibtex را دارید از خط زیر استفاده کنید و به جای MyReferences نامه فایل خود را بنویسید.
+
+% در این نمونه پایان‌نامه فرض شده است که شما فایل bib حاوی اطلاعات مربوط به مراجع خود با نام MyReferences.bib را دارید.
+\bibliography{MyReferences}
+
+% اگر به صورت عادی می‌خواهید ارجاع دهید خط بالا را غیر فعال کرده و قسمت زیر را فعال کنید و طبق مثال عمل کنید (البته این روش حرفه‌ای نیست و توصیه نمی‌شود).
+% \include{references}
+
+
+% include persian to english dictionary
+\include{FE} 
+
+% --------------------------------------   INFORMATION IN LATIN  ----------------------------------------------
+\begin{latin}
+\latintitle{My Thesis in XePersian}
+\latinauthor{First Name Last Name}
+% --------------------------------------
+% choose and activate one of the following lines
+\latindegree{Bachelor's Thesis}
+% --------------------------------------
+\latinthesisdate{\latintoday}
+\latinsupervisor{Name of Supervisor}
+% If you have advisor, write its name in the following line, otherwise inactive (comment) the line.
+%\latinadvisor{Name of Advisor} \advisorexisttrue
+\latindepartment{Computer Science}
+\latinuniversity{University of Zanjan}
+\latincity{Zanjan}
+\begin{latinabstract}
+\input{abstract_en}
+\end{latinabstract}
+\makelatintitle
+\end{latin}
+
+\end{document}
