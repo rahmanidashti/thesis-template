@@ -173,7 +173,7 @@ Advisor:  ~ \@latinadvisor}
 %% this license is at: http://www.latex-project.org/lppl.txt
 %% 
 %% This work is "maintained" (as per LPPL maintenance status)
-%% by Mohammad Charsooghi.
+%% by Saeed Rahmani.
 %% 
 %% 
 %% 
