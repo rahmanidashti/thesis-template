@@ -8,4 +8,4 @@ Bsc Students in [University of Zanjan](https://www.znu.ac.ir), Iran, and any oth
 [LaTex](https://www.latex-project.org/), [XePersian](https://www.ctan.org/pkg/xepersian?lang=en)
 
 ###
-https://rahmanidashti.github.io/thesistemplate/
+https://rahmanidashti.github.io/thesis-template/
